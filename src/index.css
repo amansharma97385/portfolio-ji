@@ -63,7 +63,32 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Prevent overflow from flex/grid children */
+  .min-w-0 {
+    min-width: 0;
+  }
+  /* Safe area for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  /* Animation delays for blob background */
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
   }
 }

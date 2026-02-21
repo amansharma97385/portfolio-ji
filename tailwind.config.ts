@@ -84,6 +84,11 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "blob": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -92,6 +97,7 @@ export default {
         "fade-in": "fade-in 0.8s ease-out",
         "float": "float 4s ease-in-out infinite",
         "glass": "glass 0.8s ease-out",
+        "blob": "blob 7s ease-in-out infinite",
       },
       boxShadow: {
         neumorphism: "8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.2)", // Neumorphism shadow

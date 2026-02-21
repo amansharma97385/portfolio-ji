@@ -16,13 +16,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-700 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed w-full max-w-[100vw] z-50 top-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-gray-200 dark:border-slate-700 shadow-sm">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full min-w-0">
+        <div className="flex items-center justify-between min-h-14 sm:h-16 gap-2">
           {/* Terminal prompt style brand with dark mode toggle */}
-          <div className="flex items-center gap-4">
-            <span className="text-xl font-mono font-bold text-green-600 dark:text-green-400 flex items-center gap-2 select-none">
-              <span className="text-green-500">$</span> Aman Sharma
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+            <span className="text-base sm:text-xl font-mono font-bold text-green-600 dark:text-green-400 flex items-center gap-1 sm:gap-2 select-none truncate">
+              <span className="text-green-500 shrink-0">$</span>
+              <span className="truncate">Aman Sharma</span>
             </span>
             <button
               onClick={toggle}
@@ -35,12 +36,12 @@ const Navbar = () => {
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center flex-shrink-0 gap-2 lg:space-x-4">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="inline-flex items-center gap-1 px-3 py-1 bg-slate-900 dark:bg-slate-800 text-blue-200 dark:text-blue-300 font-mono rounded shadow hover:bg-slate-800 dark:hover:bg-slate-700 hover:text-green-400 dark:hover:text-green-300 transition-all cursor-pointer text-sm border border-slate-700 dark:border-slate-600"
+                className="inline-flex items-center gap-1 px-2 py-1 lg:px-3 bg-slate-900 dark:bg-slate-800 text-blue-200 dark:text-blue-300 font-mono rounded shadow hover:bg-slate-800 dark:hover:bg-slate-700 hover:text-green-400 dark:hover:text-green-300 transition-all cursor-pointer text-xs lg:text-sm border border-slate-700 dark:border-slate-600 whitespace-nowrap"
               >
                 <span className="text-green-400">{'>'}</span> {item.label}
               </a>

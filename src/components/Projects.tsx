@@ -90,70 +90,70 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative bg-gradient-to-br from-white via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
+    <section id="projects" className="py-12 sm:py-16 md:py-24 relative bg-gradient-to-br from-white via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden w-full">
       {/* Subtle grid background */}
       <div className="dark:hidden absolute inset-0 pointer-events-none z-0" style={{backgroundImage: 'linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)', backgroundSize: '32px 32px'}} />
       <div className="hidden dark:block absolute inset-0 pointer-events-none z-0" style={{backgroundImage: 'linear-gradient(to right, #374151 1px, transparent 1px), linear-gradient(to bottom, #374151 1px, transparent 1px)', backgroundSize: '32px 32px'}} />
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl sm:text-6xl font-extrabold text-center mb-2 bg-gradient-to-r from-blue-600 via-fuchsia-600 to-cyan-500 bg-clip-text text-transparent select-none">Featured Projects</h2>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center mb-2 bg-gradient-to-r from-blue-600 via-fuchsia-600 to-cyan-500 bg-clip-text text-transparent select-none">Featured Projects</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {projects.map((project) => (
             <div 
               key={project.title}
-              className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-200 dark:border-slate-700"
+              className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 hover:shadow-xl transition-shadow border border-gray-200 dark:border-slate-700 min-w-0 flex flex-col"
             >
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-4">
-                  <div className={`p-3 ${project.color} rounded-full`}>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4 sm:mb-6 min-w-0">
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                  <div className={`p-2 sm:p-3 ${project.color} rounded-full shrink-0`}>
                     {project.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white min-w-0">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-words">
                       {project.title}
                     </a>
                   </h3>
                 </div>
-                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold w-fit shrink-0">
                   {project.date}
                 </span>
               </div>
               
-              <p className="text-gray-700 dark:text-gray-300 text-lg mb-6 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed min-w-0">
                 {project.description}
               </p>
               
               {/* Technology Logos */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Built with:</span>
-                <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 min-w-0">
+                <span className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 shrink-0">Built with:</span>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.techLogos.map((tech, index) => (
-                    <div key={index} className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-                      <span className={`text-lg ${tech.color}`}>{tech.logo}</span>
-                      <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">{tech.name}</span>
+                    <div key={index} className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full min-w-0">
+                      <span className={`text-sm sm:text-lg ${tech.color} shrink-0`}>{tech.logo}</span>
+                      <span className="text-xs text-gray-700 dark:text-gray-300 font-medium truncate">{tech.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {project.tags.map((tag) => (
                   <span 
                     key={tag} 
-                    className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium"
+                    className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2.5 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
               
-              <div className="flex justify-start">
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
-                  <Github className="w-5 h-5" />
-                  <span className="text-sm font-medium">View Code</span>
+              <div className="flex justify-start mt-auto">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors text-sm sm:text-base">
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                  <span className="font-medium">View Code</span>
                 </a>
               </div>
             </div>
