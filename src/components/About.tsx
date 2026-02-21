@@ -1,7 +1,22 @@
 
-import { GraduationCap, Award, User, Code } from 'lucide-react';
+import { GraduationCap, Award, User, Briefcase } from 'lucide-react';
 
 const About = () => {
+  const experience = [
+    {
+      role: "Systems Associate",
+      company: "Infosys",
+      period: "January 2026 – Present",
+      description: "Full-time Systems Associate working in Cloud & Infrastructure Services (CIS) – EXOS stream, supporting enterprise IT environments."
+    },
+    {
+      role: "Systems Associate Trainee",
+      company: "Infosys",
+      period: "September 2025 – December 2025",
+      description: "Completed training under CIS (Cloud & Infrastructure Services) – EXOS track with hands-on exposure to enterprise tools and infrastructure concepts."
+    }
+  ];
+
   const education = [
     {
       degree: "Bachelor of Computer Applications (BCA)",
@@ -62,11 +77,28 @@ const About = () => {
             </div>
             <div className="bg-slate-900 dark:bg-slate-800 text-blue-100 dark:text-blue-200 font-mono rounded shadow border border-slate-700 dark:border-slate-600 p-6">
               <p className="text-slate-300 dark:text-slate-400 font-mono leading-relaxed text-base">
-                Motivated BCA graduate (2022-2025) with strong skills in web development, AI/ML, and software engineering. 
-                Proficient in Python, Flask, and TensorFlow, with hands-on experience building efficient applications 
-                and solving complex problems. Passionate about continuous learning and eager to contribute technical 
-                expertise to innovative projects.
+                Computer Applications graduate currently working as a Systems Associate at Infosys, with practical exposure to Windows Administration, PowerShell, ServiceNow, Microsoft 365, and Entra ID. Strong technical foundation in Python, Flask, and AI/ML concepts. Skilled in troubleshooting, automation, and system support while continuously expanding expertise in software engineering and cloud technologies.
               </p>
+            </div>
+          </div>
+
+          {/* Experience Section */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Briefcase className="w-7 h-7 text-amber-500" />
+              <h3 className="text-2xl font-mono font-semibold text-slate-800 dark:text-slate-200">💼 Experience</h3>
+            </div>
+            <div className="grid gap-4">
+              {experience.map((exp) => (
+                <div key={exp.role} className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 bg-slate-900 dark:bg-slate-800 text-blue-100 dark:text-blue-200 font-mono rounded shadow px-6 py-4 mb-2 border border-slate-700 dark:border-slate-600">
+                  <div>
+                    <span className="text-green-400">{'>'}</span> <span className="font-bold text-lg">{exp.role}</span>
+                    <div className="text-blue-200 dark:text-blue-300 text-base">{exp.company}</div>
+                    <p className="text-sm text-slate-400 dark:text-slate-500 mt-2 leading-relaxed">{exp.description}</p>
+                  </div>
+                  <span className="text-sm text-green-300 dark:text-green-400 bg-slate-800 dark:bg-slate-700 px-3 py-1 rounded-full shrink-0">{exp.period}</span>
+                </div>
+              ))}
             </div>
           </div>
   
