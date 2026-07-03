@@ -7,7 +7,7 @@ const About = () => {
       role: "Systems Associate",
       company: "Infosys",
       period: "January 2026 – Present",
-      description: "Full-time Systems Associate working in Cloud & Infrastructure Services (CIS) – EXOS stream, supporting enterprise IT environments."
+      description: "Full-time Systems Associate in Cloud & Infrastructure Services (CIS) – EXOS, providing enterprise IT support across Microsoft technologies. Experienced in Microsoft Azure, Microsoft 365, Microsoft Entra ID, Dynamics 365 CRM, Power Apps, ServiceNow, Windows Administration, and PowerShell, with hands-on involvement in system administration, troubleshooting, user support, automation, and cloud-based enterprise solutions."
     },
     {
       role: "Systems Associate Trainee",
@@ -40,6 +40,14 @@ const About = () => {
   ];
 
   const certifications = [
+    {
+      title: "Introduction to Microsoft Azure Cloud Services",
+      image: "/port-uploads/azure-cloud-services.png"
+    },
+    {
+      title: "Microsoft Azure Essentials Professional Certificate by Microsoft and LinkedIn",
+      image: "/port-uploads/azure-essentials.png"
+    },
     {
       title: "Foundations of User Experience (UX) Design on Coursera",
       image: "/port-uploads/uiux.png"
@@ -77,7 +85,7 @@ const About = () => {
             </div>
             <div className="bg-slate-900 dark:bg-slate-800 text-blue-100 dark:text-blue-200 font-mono rounded shadow border border-slate-700 dark:border-slate-600 p-4 sm:p-6">
               <p className="text-slate-300 dark:text-slate-400 font-mono leading-relaxed text-sm sm:text-base">
-                Computer Applications graduate currently working as a Systems Associate at Infosys, with practical exposure to Windows Administration, PowerShell, ServiceNow, Microsoft 365, and Entra ID. Strong technical foundation in Python, Flask, and AI/ML concepts. Skilled in troubleshooting, automation, and system support while continuously expanding expertise in software engineering and cloud technologies.
+                Computer Applications graduate currently working as a Systems Associate at Infosys, with hands-on experience in Microsoft Azure, Microsoft 365, Microsoft Entra ID, Dynamics 365 CRM, Power Apps, ServiceNow, PowerShell, Windows Administration, Python, Flask, and AI/ML concepts. Skilled in troubleshooting, process automation, system support, and low-code application development, with a strong interest in software engineering, cloud technologies, and enterprise solutions.
               </p>
             </div>
           </div>

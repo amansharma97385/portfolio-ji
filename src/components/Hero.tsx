@@ -1,24 +1,8 @@
 
-import { Github, Linkedin, Mail, Download, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from './ui/button';
-import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const tagline = "Full Stack Developer | UI/UX Enthusiast | Tech Explorer";
-  const typingSpeed = 60;
-
-  useEffect(() => {
-    if (currentIndex < tagline.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(tagline.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, typingSpeed);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, tagline]);
-
   return (
     <section className="relative min-h-screen min-h-[100dvh] flex flex-col items-center justify-center bg-gradient-to-br from-white via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden w-full">
       {/* Subtle grid background */}
@@ -36,14 +20,9 @@ const Hero = () => {
           />
         </div>
         {/* Name with gradient - responsive type scale */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-2 sm:mb-3 tracking-tight leading-tight bg-gradient-to-r from-blue-600 via-fuchsia-600 to-cyan-500 bg-clip-text text-transparent select-none px-1">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-6 sm:mb-8 tracking-tight leading-tight bg-gradient-to-r from-blue-600 via-fuchsia-600 to-cyan-500 bg-clip-text text-transparent select-none px-1">
           Aman Sharma
         </h1>
-        {/* Animated tagline - wraps on small screens */}
-        <div className="font-mono text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 text-center mb-6 sm:mb-8 min-h-[2.5rem] sm:min-h-[3rem] px-2 w-full max-w-full overflow-hidden">
-          <span className="break-words">{displayedText}</span>
-          {currentIndex < tagline.length && <span className="animate-pulse text-blue-400 dark:text-cyan-400">|</span>}
-        </div>
         {/* Socials - wrap on narrow screens */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-10">
           <a href="https://github.com/amansharma97385" target="_blank" rel="noopener noreferrer" className="shrink-0">
